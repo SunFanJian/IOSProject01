@@ -14,8 +14,11 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - FDFullscreenPopGesture (1.1)
   - IQKeyboardManager (5.0.2)
+  - Masonry (1.1.0)
   - MBProgressHUD (1.0.0)
+  - Toast (3.1.0)
   - WZLBadge (1.2.6)
   - YYCategories (1.0.4):
     - YYCategories/no-arc (= 1.0.4)
@@ -27,8 +30,11 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - FDFullscreenPopGesture
   - IQKeyboardManager
+  - Masonry
   - MBProgressHUD
+  - Toast
   - WZLBadge
   - YYCategories
   - YYImage
@@ -37,8 +43,11 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
+    - FDFullscreenPopGesture
     - IQKeyboardManager
+    - Masonry
     - MBProgressHUD
+    - Toast
     - WZLBadge
     - YYCategories
     - YYImage
@@ -46,13 +55,16 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   IQKeyboardManager: 5ab84749f20f682f784160c2c63bef4f19d10d26
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  Toast: 14a93686d6c8bfe2727afd342414e35660a8a1f3
   WZLBadge: 9ec779dcfd94c825518b395e8315fccaabff1bfa
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 37a6845f9fd0e2cbf2c2660c0a7c99b564b6949f
+PODFILE CHECKSUM: 0f5b4f1064e1238dd23924f75472fb1c3785757c
 
 COCOAPODS: 1.5.0

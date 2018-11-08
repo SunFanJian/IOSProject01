@@ -1,0 +1,87 @@
+//#ifndef PrefixHeader_pch
+//#define PrefixHeader_pch
+
+
+#import <YYCategories.h>
+#import <YYImage.h>
+#import <YYText.h>
+#import <AFNetworking.h>
+#import <MBProgressHUD.h>
+#import <IQKeyboardManager.h>
+#import <UIView+Toast.h>
+#import <Masonry.h>
+
+//#import "UIView+Additions.h"   // YYCategories/"UIView+YYAdd.h"
+
+#import "UIColor+Random.h"
+#import "UIView+GestureCallback.h"  //view添加手势
+#import "JXTAlertController.h"
+#import "MBProgressHUD+SFJ.h"
+
+
+//弱引用/强引用  可配对引用在外面用MPWeakSelf(self)，block用MPStrongSelf(self)  也可以单独引用在外面用MPWeakSelf(self) block里面用weakself
+
+#define LMJWeak(type)  __weak typeof(type) weak##type = type
+#define LMJStrong(type)  __strong typeof(type) strong##type = type
+
+/**
+ *  属性转字符串
+ */
+#define LMJKeyPath(obj, key) @(((void)obj.key, #key))
+
+
+//是否是空对象
+#define LMJIsEmpty(_object) (_object == nil \
+|| [_object isKindOfClass:[NSNull class]] \
+|| ([_object respondsToSelector:@selector(length)] && [(NSData *)_object length] == 0) \
+|| ([_object respondsToSelector:@selector(count)] && [(NSArray *)_object count] == 0))
+
+//不同屏幕尺寸字体适配
+#define kScreenWidthRatio  (UIScreen.mainScreen.bounds.size.width / 375.0)
+#define kScreenHeightRatio (UIScreen.mainScreen.bounds.size.height / 667.0)
+#define AdaptedWidth(x)  ceilf((x) * kScreenWidthRatio)
+#define AdaptedHeight(x) ceilf((x) * kScreenHeightRatio)
+#define AdaptedFontSize(R)     [UIFont systemFontOfSize:AdaptedWidth(R)]
+
+//由角度转换弧度
+#define kDegreesToRadian(x)      (M_PI * (x) / 180.0)
+//由弧度转换角度
+#define kRadianToDegrees(radian) (radian * 180.0) / (M_PI)
+
+// 判断是否是iPhone X
+#define iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+// 获取状态栏高度
+#define STATUS_BAR_HEIGHT (iPhoneX ? 44.f : 20.f)
+// 获取导航栏高度(bottom的位置)
+#define NAVIGATION_BAR_HEIGHT (iPhoneX ? 88.f : 64.f)
+// 获取tabBar高度
+#define TAB_BAR_HEIGHT (iPhoneX ? (49.f+34.f) : 49.f)
+// home indicator
+#define HOME_INDICATOR_HEIGHT (iPhoneX ? 34.f : 0.f)
+//设置 tabBarButtonItem 的高度
+#define SET_TABBAR_BUTTON_ITEM_HEIGHT (iPhoneX ? TAB_BAR_HEIGHT-34.f : TAB_BAR_HEIGHT)
+//4英尺屏幕
+#define FourInch ([UIScreen mainScreen].bounds.size.height == 568.0)
+
+/** 屏幕高度 */
+#define kHIGHT [UIScreen mainScreen].bounds.size.height
+/** 屏幕宽度 */
+#define kWIGTH [UIScreen mainScreen].bounds.size.width
+
+//色值
+#define RGBA(r,g,b,a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+#define RGB(r,g,b) RGBA(r,g,b,1.0f)
+//全局背景色
+#define SFJBGColor RGB(245,245,245)
+// 随机色
+#define SFJRandomColor RGB(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+
+#ifdef DEBUG
+
+#define NSLogFunc NSLog(@"=====Begin==========\n FILE: %@\n FUNC: %s\n LINE: %d\n", [NSString stringWithUTF8String:__FILE__].lastPathComponent, __PRETTY_FUNCTION__, __LINE__)
+
+#else
+
+#define NSLogFunc
+
+#endif

@@ -1,5 +1,5 @@
 platform :ios, '10.3'
-target 'IOSProject01_启动图' do
+target 'IOSProject01' do
 # YYkit
 pod 'YYImage'
 pod 'YYText'
@@ -12,4 +12,10 @@ pod 'AFNetworking'
 pod 'IQKeyboardManager'
 # 小红点
 pod 'WZLBadge'
+# Toast
+pod 'Toast'
+# 全局滑动
+pod 'FDFullscreenPopGesture'
+#自动布局
+pod 'Masonry'
 end
